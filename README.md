@@ -1,8 +1,10 @@
 <h1 align="center">🫀 Heart Disease Prediction using Machine Learning</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python Version" /> <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
-  <img src="https://img.shields.io/badge/Status-Completed-success" alt="Project Status" /> <img src="https://img.shields.io/badge/Built%20with-%E2%9D%A4-red" alt="Love" />
+  <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python Version" />
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+  <img src="https://img.shields.io/badge/Status-Completed-success" alt="Project Status" />
+  <img src="https://img.shields.io/badge/Built%20with-%E2%9D%A4-red" alt="Love" />
 </p>
 
 ---
@@ -13,7 +15,7 @@
 - [Dataset](#dataset)
 - [Methodology & Techniques](#methodology--techniques)
 - [Key Findings & Results](#key-findings--results)
-- [How to Run](#how-to-run)
+- [Important Note on Model Performance & Data Integrity](#important-note-on-model-performance--data-integrity) - [How to Run](#how-to-run)
 - [Requirements](#requirements)
 - [References](#references)
 - [Connect with Me](#connect-with-me)
@@ -85,13 +87,13 @@ The project followed a structured machine learning pipeline:
 
 All models achieved strong predictive performance (80-96% accuracy), demonstrating the feasibility of ML for heart disease prediction.
 
-| Model                   | Accuracy | Precision | Recall | F1-Score | ROC AUC |
+| Model | Accuracy | Precision | Recall | F1-Score | ROC AUC |
 | :---------------------- | :------- | :-------- | :----- | :------- | :------ |
-| **Random Forest** | 96.7%    | 95.4%     | 97.9%  | 96.7%    | 0.996   |
-| Decision Tree           | 93.8%    | 93.9%     | 93.3%  | 93.3%    | 0.964   |
-| Support Vector Machine  | 88.9%    | 84.0%     | 95.3%  | 89.3%    | 0.958   |
-| Logistic Regression     | 83.4%    | 79.2%     | 89.3%  | 83.9%    | 0.916   |
-| Gaussian Naive Bayes    | 81.2%    | 78.6%     | 83.9%  | 81.1%    | 0.887   |
+| **Random Forest** | 96.7% | 95.4% | 97.9% | 96.7% | 0.996 |
+| Decision Tree | 93.8% | 93.9% | 93.3% | 93.3% | 0.964 |
+| Support Vector Machine | 88.9% | 84.0% | 95.3% | 89.3% | 0.958 |
+| Logistic Regression | 83.4% | 79.2% | 89.3% | 83.9% | 0.916 |
+| Gaussian Naive Bayes | 81.2% | 78.6% | 83.9% | 81.1% | 0.887 |
 
 **Key Insights:**
 
@@ -105,6 +107,22 @@ All models achieved strong predictive performance (80-96% accuracy), demonstrati
 * **Decision Tree Classifier** also performed very strongly (93.8% accuracy), making it a viable second-best option.
 
 These findings underscore the effectiveness of machine learning in cardiovascular disease prediction and provide a robust model for potential future applications.
+
+---
+
+## ⚠️ Important Note on Model Performance & Data Integrity
+
+The exceptionally high performance metrics achieved by the top-performing models (e.g., Random Forest Classifier with 96.7% accuracy and 0.996 ROC AUC, and SVC with 96% F1-score post-tuning) warrant careful interpretation.
+
+As detailed in the "Dataset" section, **723 duplicate records were identified and retained** within the dataset to maximize the available data for pattern learning, given the absence of unique patient identifiers or visit timestamps. While this approach allows the models to train on a larger volume of data, it introduces a **potential risk of data leakage** if these duplicates represent non-independent observations (e.g., identical patient records appearing in both the training and testing sets). This could lead to an **overly optimistic estimation of the model's true generalization performance** on entirely new, truly unseen data.
+
+For a production-level deployment and to ensure the most robust and generalizable results, **future work would critically involve:**
+1.  **Obtaining clarified metadata:** To definitively ascertain the nature of these duplicate records (e.g., confirming if they are truly distinct patient profiles or repeat visits).
+2.  **Implementing a strict data handling strategy:** Such as removing all exact duplicates or performing a patient-level split (if unique patient IDs were available), *before* the train-test split to prevent data leakage and provide a more conservative, realistic evaluation of model performance on truly unseen data.
+
+Despite this, the project effectively demonstrates a comprehensive machine learning workflow, proficiency in various algorithms, and the impact of feature engineering and hyperparameter tuning on model optimization. The insights gained from the EDA and correlation analysis remain valuable for understanding heart disease risk factors.
+
+---
 
 ## 💻 How to Run
 
