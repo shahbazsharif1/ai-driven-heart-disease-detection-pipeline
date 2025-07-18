@@ -27,9 +27,9 @@
 This project **develops and evaluates machine learning models to accurately predict the presence of heart disease** in patients based on a comprehensive set of medical attributes. As cardiovascular diseases are a leading cause of mortality globally, early and accurate prediction is crucial for timely intervention and improving patient outcomes.
 
 This work demonstrates an end-to-end data science workflow, including:
-* **Robust Data Preprocessing:** Handling outliers and making informed decisions on data integrity.
-* **Comprehensive Exploratory Data Analysis (EDA):** Uncovering key relationships within medical data.
-* **Comparative Model Building:** Implementing and evaluating a range of classification algorithms.
+* **Data Preprocessing:** Handling outliers and making informed decisions on data integrity.
+* **Exploratory Data Analysis (EDA):** Uncovering key relationships within medical data.
+* **Model Building:** Implementing and evaluating a range of classification algorithms.
 * **Performance Optimization:** Applying hyperparameter tuning to achieve superior predictive accuracy.
 
 ## 📈 Business Problem & Impact
@@ -38,7 +38,7 @@ Heart disease poses significant challenges to healthcare systems worldwide, resp
 
 This project directly addresses this by:
 * **Enhancing Early Detection:** Providing a data-driven tool for clinicians to identify at-risk patients more effectively.
-* **Improving Patient Outcomes:** Facilitating earlier diagnosis, which can lead to more individualized treatment regimens and potentially lower mortality rates.
+* **Improving Patient Outcomes:** Facilitating earlier diagnosis, which can lead to more personalised treatment regimens and potentially decrease the mortality rates.
 * **Leveraging AI for Healthcare:** Showcasing the power of machine learning to analyze large medical datasets, identify hidden patterns, and improve prediction accuracy beyond conventional methods.
 
 ## 📊 Dataset
@@ -50,7 +50,7 @@ This project directly addresses this by:
 * **Data Characteristics:** Includes both numerical and categorical features.
 
 **Note on Data Duplicates:**
-During the data cleaning phase, **723 duplicate records were identified** within the original dataset of 1025 rows. Removing these would have resulted in a significant data loss (reducing the dataset to 302 unique rows). Given the absence of unique patient identifiers or timestamps to distinguish these as data entry errors or independent repeated observations, the decision was made to **retain these duplicates**. This approach prioritizes maximizing the available data for pattern learning, acknowledging that this may lead to a more optimistic estimation of model performance during internal validation. This was a deliberate trade-off given the dataset's characteristics.
+During the data cleaning process, **723 duplicate records were identified** within the original dataset of 1025 rows. Removing these would have resulted in a significant loss of data(reducing the dataset to 302 unique rows). Given the absence of unique patient identifiers or timestamps to distinguish these as data entry errors or independent repeated observations, the decision was made to **retain these duplicates**. This approach prioritizes maximizing the available data for pattern learning, acknowledging that this may lead to a more optimistic estimation of model performance during internal validation. This was a deliberate trade-off given the dataset's characteristics.
 
 ## ⚙️ Methodology & Techniques
 
@@ -170,8 +170,8 @@ Despite this, the project effectively demonstrates a comprehensive machine learn
 
 ## 🤝 Connect with Me
 
-[www.linkedin.com/in/shahbaz-sharif]
-[Your GitHub Profile Link]
+Email: shahbaz.w156@gmail.com
+Linkedin: www.linkedin.com/in/shahbaz-sharif
 
 ---
 
